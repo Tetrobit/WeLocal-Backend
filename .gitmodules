@@ -1,0 +1,27 @@
+[submodule "welocal-ecology-service"]
+	path = welocal-ecology-service
+	url = https://github.com/Tetrobit/welocal-ecology-service.git
+
+[submodule "welocal-freemarket-service"]
+	path = welocal-freemarket-service
+	url = https://github.com/Tetrobit/welocal-freemarket-service.git
+
+[submodule "welocal-small-business-service"]
+	path = welocal-small-business-service
+	url = https://github.com/Tetrobit/welocal-small-business-service.git
+
+[submodule "welocal-farmers-service"]
+	path = welocal-farmers-service
+	url = https://github.com/Tetrobit/welocal-farmers-service.git
+
+[submodule "welocal-transport-service"]
+	path = welocal-transport-service
+	url = https://github.com/Tetrobit/welocal-transport-service.git
+
+[submodule "welocal-local-services-service"]
+	path = welocal-local-services-service
+	url = https://github.com/Tetrobit/welocal-local-services-service.git
+
+[submodule "welocal-polls-service"]
+	path = welocal-polls-service
+	url = https://github.com/Tetrobit/welocal-polls-service.git
