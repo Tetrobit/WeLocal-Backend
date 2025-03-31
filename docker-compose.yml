@@ -11,7 +11,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - welocal-network
     healthcheck:
@@ -53,124 +53,124 @@ services:
     depends_on:
       - zabbix-server
 
-  welocal-ecology-service:
-    build:
-      context: ./welocal-ecology-service
-      dockerfile: Dockerfile
-    container_name: welocal-ecology-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8081:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-ecology-service:
+  #   build:
+  #     context: ./welocal-ecology-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-ecology-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8081:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
-  welocal-freemarket-service:
-    build:
-      context: ./welocal-freemarket-service
-      dockerfile: Dockerfile
-    container_name: welocal-freemarket-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8082:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-freemarket-service:
+  #   build:
+  #     context: ./welocal-freemarket-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-freemarket-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8082:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
-  welocal-small-business-service:
-    build:
-      context: ./welocal-small-business-service
-      dockerfile: Dockerfile
-    container_name: welocal-small-business-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8083:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-small-business-service:
+  #   build:
+  #     context: ./welocal-small-business-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-small-business-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8083:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
-  welocal-farmers-service:
-    build:
-      context: ./welocal-farmers-service
-      dockerfile: Dockerfile
-    container_name: welocal-farmers-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8084:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-farmers-service:
+  #   build:
+  #     context: ./welocal-farmers-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-farmers-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8084:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
-  welocal-transport-service:
-    build:
-      context: ./welocal-transport-service
-      dockerfile: Dockerfile
-    container_name: welocal-transport-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8085:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-transport-service:
+  #   build:
+  #     context: ./welocal-transport-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-transport-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8085:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
-  welocal-local-services-service:
-    build:
-      context: ./welocal-local-services-service
-      dockerfile: Dockerfile
-    container_name: welocal-local-services-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8086:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-local-services-service:
+  #   build:
+  #     context: ./welocal-local-services-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-local-services-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8086:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
-  welocal-polls-service:
-    build:
-      context: ./welocal-polls-service
-      dockerfile: Dockerfile
-    container_name: welocal-polls-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
-      - SPRING_DATASOURCE_USERNAME=welocal
-      - SPRING_DATASOURCE_PASSWORD=welocal123
-    ports:
-      - "8087:8080"
-    networks:
-      - welocal-network
-    depends_on:
-      postgres:
-        condition: service_healthy
+  # welocal-polls-service:
+  #   build:
+  #     context: ./welocal-polls-service
+  #     dockerfile: Dockerfile
+  #   container_name: welocal-polls-service
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/welocal
+  #     - SPRING_DATASOURCE_USERNAME=welocal
+  #     - SPRING_DATASOURCE_PASSWORD=welocal123
+  #   ports:
+  #     - "8087:8080"
+  #   networks:
+  #     - welocal-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
 
 networks:
   welocal-network:
