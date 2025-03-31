@@ -25,3 +25,7 @@
 [submodule "welocal-polls-service"]
 	path = welocal-polls-service
 	url = https://github.com/Tetrobit/welocal-polls-service.git
+
+[submodule "welocal-auth-service"]
+	path = welocal-auth-service
+	url = https://github.com/Tetrobit/welocal-auth-service.git
