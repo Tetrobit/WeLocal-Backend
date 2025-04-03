@@ -47,7 +47,7 @@ services:
       ZBX_SERVER_HOST: zabbix-server
       PHP_TZ: UTC
     ports:
-      - "8080:8080"
+      - "10401:8080"
     networks:
       - welocal-network
     depends_on:
@@ -63,7 +63,7 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8081:8080"
+  #     - "10402:10402"
   #   networks:
   #     - welocal-network
   #   depends_on:
@@ -80,7 +80,7 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8082:8080"
+  #     - "10403:10403"
   #   networks:
   #     - welocal-network
   #   depends_on:
@@ -97,7 +97,7 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8083:8080"
+  #     - "10404:10404"
   #   networks:
   #     - welocal-network
   #   depends_on:
@@ -114,7 +114,7 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8084:8080"
+  #     - "10405:10405"
   #   networks:
   #     - welocal-network
   #   depends_on:
@@ -131,7 +131,7 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8085:8080"
+  #     - "10406:10406"
   #   networks:
   #     - welocal-network
   #   depends_on:
@@ -148,7 +148,7 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8086:8080"
+  #     - "10407:10407"
   #   networks:
   #     - welocal-network
   #   depends_on:
@@ -165,12 +165,25 @@ services:
   #     - SPRING_DATASOURCE_USERNAME=welocal
   #     - SPRING_DATASOURCE_PASSWORD=welocal123
   #   ports:
-  #     - "8087:8080"
+  #     - "10408:10408"
   #   networks:
   #     - welocal-network
   #   depends_on:
   #     postgres:
   #       condition: service_healthy
+
+  welocal-auth-service:
+    build:
+      context: ./welocal-auth-service
+      dockerfile: Dockerfile
+    container_name: welocal-auth-service
+    ports:
+      - "10409:10409"
+    networks:
+      - welocal-network
+    depends_on:
+      postgres:
+        condition: service_healthy
 
 networks:
   welocal-network:
