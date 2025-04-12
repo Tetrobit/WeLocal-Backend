@@ -1,0 +1,8 @@
+cd welocal-auth-service             && git remote add origin-ssh git@github.com:Tetrobit/welocal-auth-service.git           && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-ecology-service          && git remote add origin-ssh git@github.com:Tetrobit/welocal-ecology-service.git        && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-farmers-service          && git remote add origin-ssh git@github.com:Tetrobit/welocal-farmers-service.git        && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-freemarket-service       && git remote add origin-ssh git@github.com:Tetrobit/welocal-freemarket-service.git     && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-local-services-service   && git remote add origin-ssh git@github.com:Tetrobit/welocal-local-services-service.git && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-polls-service            && git remote add origin-ssh git@github.com:Tetrobit/welocal-polls-service.git          && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-small-business-service   && git remote add origin-ssh git@github.com:Tetrobit/welocal-small-business-service.git && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
+cd welocal-transport-service        && git remote add origin-ssh git@github.com:Tetrobit/welocal-transport-service.git      && git add . && git commit -m 'feat: add openapi' && git push origin-ssh HEAD && cd ..;
